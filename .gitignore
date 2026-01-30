@@ -1,0 +1,27 @@
+# Comentário começa com #
+# Linhas em branco são ignoradas
+
+# Ignorar um arquivo específico
+secrets.env
+
+# Ignorar uma pasta (recomendado terminar com /)
+__pycache__/
+test-results/
+
+# Ignorar por extensão (qualquer lugar do projeto)
+*.webm
+*.log
+
+# Ignorar por padrão de caminho (relativo ao local do .gitignore)
+playwright-report/
+
+# Wildcards:
+# *  = qualquer sequência (exceto /)
+# ?  = um caractere
+# ** = qualquer profundidade de pastas (em versões modernas do git)
+
+# Exemplo: ignorar .webm só dentro de test-results
+test-results/**/*.webm
+
+# Exceção (re-incluir algo que foi ignorado)
+!important.webm
