@@ -3,6 +3,30 @@ import pytest
 import pytest_html
 from slugify import slugify  # pip install python-slugify
 
+STORAGE_FILE = "tests/playwirght/auth/state.json"
+
+
+@pytest.fixture(scope="session")
+def contexto(browser):
+	if os.path.isfile(STORAGE_FILE):
+		contexto = browser.new_context(
+			base_url="https://automationexercise.com",
+			record_video_dir="videos",
+			storage_state=STORAGE_FILE
+		)
+	else:
+		contexto = browser.new_context(
+			base_url="https://automationexercise.com",
+			record_video_dir="videos"
+		)
+  
+	yield contexto
+	os.makedirs(os.path.dirname(STORAGE_FILE), exist_ok=True)
+	if not os.path.isfile(STORAGE_FILE):
+		contexto.storage_state(path=STORAGE_FILE)
+  
+	contexto.close()
+
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
