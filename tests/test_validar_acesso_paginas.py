@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from playwright.sync_api import expect
+from playwright.sync_api import expect, sync_playwright
 
 
 def test_validar_home(page):
@@ -35,7 +35,7 @@ def test_validar_carrinho(page):
     print(test_validar_carrinho.__doc__)
     pagina = BasePage(page)
     pagina.acessar_carrinho()
-    expect(page.get_by_text("Home Shopping Cartaa")).to_be_visible()
+    expect(page.get_by_text("Home Shopping Cart")).to_be_visible()
 
 
 def test_validar_login(page):
