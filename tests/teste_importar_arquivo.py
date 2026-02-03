@@ -6,12 +6,16 @@ def test_importar_arquivo_unico(page):
     with page.expect_file_chooser() as fc_info:
         page.get_by_role("button", name="Adicionar arquivos").click()
     file_chooser = fc_info.value
-    file_chooser.set_files(r"C:\python\playwirght\stores\teste_importar_arquivo\teste1.txt")
+    file_chooser.set_files(
+        r"C:\python\playwirght\stores\teste_importar_arquivo\teste1.txt"
+    )
     page.get_by_role("textbox", name="O seu email (opcional)").click()
     page.get_by_role("textbox", name="O seu email (opcional)").fill("teste@mail.com")
-    page.wait_for_timeout(10000)  # Espera 10 segundos    
+    page.wait_for_timeout(10000)  # Espera 10 segundos
     page.get_by_role("button", name="Transferir").click()
-    expect(page.get_by_role("heading", name="Concluída!")).to_be_visible(timeout=10000)  # 10 segundos
+    expect(page.get_by_role("heading", name="Concluída!")).to_be_visible(
+        timeout=10000
+    )  # 10 segundos
 
     # page.get_by_role("button", name="Criar um link").click()
     # page.get_by_role("textbox", name="Seu e-mail").fill("teste@mail1.com")
@@ -27,11 +31,17 @@ def test_importar_arquivo_multiplos(page):
     with page.expect_file_chooser() as fc_info:
         page.get_by_role("button", name="Adicionar arquivos").click()
     file_chooser = fc_info.value
-    file_chooser.set_files([r"C:\python\playwirght\stores\teste_importar_arquivo\teste1.txt",
-                            r"C:\python\playwirght\stores\teste_importar_arquivo\teste123.txt"])
+    file_chooser.set_files(
+        [
+            r"C:\python\playwirght\stores\teste_importar_arquivo\teste1.txt",
+            r"C:\python\playwirght\stores\teste_importar_arquivo\teste123.txt",
+        ]
+    )
     page.get_by_role("textbox", name="O seu email (opcional)").click()
     page.get_by_role("textbox", name="O seu email (opcional)").fill("teste@mail.com")
-    page.wait_for_timeout(10000)  # Espera 10 segundos    
+    page.wait_for_timeout(10000)  # Espera 10 segundos
     page.get_by_role("button", name="Transferir").click()
-    expect(page.get_by_role("heading", name="Concluída!")).to_be_visible(timeout=10000)  # 10 segundos
+    expect(page.get_by_role("heading", name="Concluída!")).to_be_visible(
+        timeout=10000
+    )  # 10 segundos
     page.pause()

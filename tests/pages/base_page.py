@@ -1,6 +1,5 @@
-
 class BasePage:
-    
+
     def __init__(self, page):
         self.page = page
         self.botao_home = page.get_by_role("link", name="Home")
@@ -8,7 +7,6 @@ class BasePage:
         self.botao_carrinho = page.get_by_role("link", name=" Cart")
         self.botao_cadastro_login = page.get_by_role("link", name="Signup / Login")
         self.botao_logout = page.get_by_role("link", name="Logout")
-
 
     def acessar_home(self):
         self.page.goto("https://automationexercise.com")

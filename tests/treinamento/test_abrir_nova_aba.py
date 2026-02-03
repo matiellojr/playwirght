@@ -1,5 +1,3 @@
-
-
 def test_abrir_nova_aba(page):
     # Navegar para a página inicial
     page.goto("https://demoqa.com/browser-windows")

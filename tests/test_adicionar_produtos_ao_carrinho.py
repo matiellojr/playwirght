@@ -1,6 +1,7 @@
 from pages.produtos import Produtos
 from pages.carrinho import Carrinho
 
+
 def test_adicionar_produtos_ao_carrinho(page):
     produtos = Produtos(page)
     carrinho = Carrinho(page)
@@ -10,17 +11,19 @@ def test_adicionar_produtos_ao_carrinho(page):
     produtos.adicionar_produto_ao_carrinho(indice_produto=1)
     produtos.botao_continuar_comprando.click()
     carrinho.validar_carrinho(
-        indice_produto=0,   
+        indice_produto=0,
         cabecalho_descricao_produto="Blue Top",
         descricao_produto="Women > Tops",
         preco_produto="Rs. 500",
-        preco_total_produto="Rs. 500")    
+        preco_total_produto="Rs. 500",
+    )
     carrinho.validar_carrinho(
-        indice_produto=1,   
+        indice_produto=1,
         cabecalho_descricao_produto="Men Tshirt",
         descricao_produto="Men > T-Shirts",
         preco_produto="Rs. 400",
-        preco_total_produto="Rs. 400")
+        preco_total_produto="Rs. 400",
+    )
     page.pause()
     produtos.botao_carrinho.click()
     page.pause()

@@ -28,20 +28,20 @@
 #     page.get_by_role("checkbox", name="Checked checkbox").uncheck()
 #     page.pause()
 
-# def test_select_option(page): 
+# def test_select_option(page):
 #     page.goto("https://bootswatch.com/default/")
 #     page.pause()
 #     page.get_by_label("Example select").select_option("2")
 #     page.get_by_label("Example multiple select").select_option(["1", "3", "4"])
-    
-# def test_press(page): 
+
+# def test_press(page):
 #     page.goto("https://bootswatch.com/default/")
 #     page.pause()
 #     page.get_by_placeholder("name@example.com").fill("Email.email@teste.com")
 #     page.get_by_placeholder("name@example.com").press("Tab")
 #     page.keyboard.type("Space")
 
-# def test_press_2(page): 
+# def test_press_2(page):
 #     page.goto("https://bootswatch.com/default/")
 #     page.pause()
 #     page.get_by_role("textbox", name="Example textarea").click()
@@ -57,7 +57,7 @@
 #     page.get_by_placeholder("name@example.com").press("ControlOrMeta+v")
 #     page.pause()
 
-# def test_type(page): 
+# def test_type(page):
 #     page.goto("https://bootswatch.com/default/")
 #     page.pause()
 #     # ir até area de texto
@@ -65,11 +65,11 @@
 #      # type digita caracter por caracter, diferente do fill que preenche todo o campo de uma vez e rapido
 #     page.get_by_role("textbox", name="Example textarea").type("lorem ipsum lorem ipsum lorem ipsum")
 #     page.get_by_role("textbox", name="Example textarea").press("Enter")
-#      # type digita caracter por caracter, diferente do fill que preenche todo o campo de uma vez e devagar    
+#      # type digita caracter por caracter, diferente do fill que preenche todo o campo de uma vez e devagar
 #     page.get_by_role("textbox", name="Example textarea").type("lorem ipsum lorem ipsum lorem ipsum", delay=500)
 
 
-# def test_hover(page): 
+# def test_hover(page):
 #     page.goto("https://automationexercise.com/")
 #     page.pause()
 #     page.locator(".single-products:visible").filter(has_text="Madame Top For Women").click()
@@ -77,15 +77,14 @@
 #     page.locator("div:nth-child(9) > .product-image-wrapper > .single-products > .product-overlay > .overlay-content > .btn").click()
 
 
-# def test_dblclick(page): 
+# def test_dblclick(page):
 #     page.goto("https://automationexercise.com/login")
 #     page.pause()
 #     page.locator(".login-form h2").dblclick()
 
 
-
 # from playwright.sync_api import expect
-# def test_expect(page): 
+# def test_expect(page):
 #     page.goto("https://automationexercise.com/")
 #     page.pause()
 #     page.locator(".single-products:visible").filter(has_text="Madame Top For Women").click()
@@ -109,5 +108,3 @@
 #     expect(page.locator("body")).to_contain_text("Features Items")
 #     expect(page.get_by_role("link", name=" Women")).to_be_visible()
 #     expect(page.get_by_role("heading", name=" Women")).to_be_visible()
-
-

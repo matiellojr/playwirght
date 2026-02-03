@@ -1,4 +1,5 @@
-from pages.base_page import BasePage 
+from pages.base_page import BasePage
+
 
 class Produtos(BasePage):
 
@@ -6,7 +7,9 @@ class Produtos(BasePage):
         super().__init__(page)
         self.card_produtos = page.locator(".single-products")
         self.botao_adicionar_carrinho = page.locator(".overlay-content:visible > .btn")
-        self.botao_continuar_comprando = page.get_by_role("button", name="Continue Shopping")
+        self.botao_continuar_comprando = page.get_by_role(
+            "button", name="Continue Shopping"
+        )
 
     def adicionar_produto_ao_carrinho(self, indice_produto=0):
         self.card_produtos.nth(indice_produto).hover()
